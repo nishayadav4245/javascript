@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function myfunction(){
+        var x=document.form1.fname;
+        x.value=x.valuetoUpperCase();
+
+    }
+</script>
+<body>
+  <form name="form1">
+    enter your name<input type="text" name="fname" onkeyup="myfunction()">
+  </form>  
+  <p>when you leave the input field ,a function is triggered which makes letter to capital letter</p>
+</body>
+</html>

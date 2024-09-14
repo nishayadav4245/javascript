@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Details</title>
+    <style>
+        div#maincontent {
+            height: 150px;
+            width: 500px;
+            border: 1px solid #CEE2FA;
+            text-align: left;
+            color: #08438E;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+        div#heading {
+            text-decoration: bold;
+            text-align: center;
+            margin-top: 80px;
+            width: 500px;
+            border: 1px solid #CEE2FA;
+            text-align: center;
+            color: #08438E;
+            background-color: #CEE2FA;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+        h4 {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="heading">
+            <b>Theatre Drama</b>
+        </div>
+        <div id="maincontent">
+            <h4>Your Ticket Details:</h4>
+            
+            <br>
+            <script>
+            // write code here...
+            prompt("Enter the total number of seats booked:");
+                let movie={
+                    seat:"2",
+                    cost:"$18",
+                    discount:"$10%",
+                    costed:"$16.2"
+                };
+            
+            document.write("Total no. of seats booked:"+movie.seat);
+            document.write("<br>");
+            document.write("Total cost of tickets booked:"+movie.cost);
+            document.write("<br>");
+            document.write("Festive season discount is:"+movie.discount);
+            document.write("<br>");
+            document.write("Total cost after discount:"+movie.costed);
+        //     let x=prompt("total no of seats booked:");
+        //     parseInt(x);
+        //  document.write("total no of seats booked:",x);
+        //  document.write("<br>");
+        //  let y=prompt("total cost of tickets booked is : $");
+        //  parseInt(y);
+        //  document.write("total cost of tickets booked is : $",y);
+        //  document.write("<br>");
+        //  let z=prompt("festive season discount is:");
+        //  parseInt(z);
+        //  document.write("festive season discount is: $",z);
+        //  document.write("<br>");
+        //  let a=prompt("total cost after discount:");
+        //  parseInt(a);
+        //  document.write("total cost after discount is : $",a);
+
+
+            </script>
+        </div>
+    </center>
+</body>
+</html>

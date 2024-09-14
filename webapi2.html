@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Validation</h2>
+    <p>Enter a number and click OK:</p>
+    <input id="id1" type="number"min="300" max="300" required>
+    <button onclick="myFynction()">OK</button>
+    <p>if the number is less than 100 or greater than 300, an error</p>
+    <p id="demo"></p>
+    <script>
+        function myFunction(){
+            const inpObj=document.getElementById("id1");
+            if(!inpobj.checkValidity()){
+                document.getElementById("demo").innerHtml=inObj.validateMessage;
+
+            }else{
+                document.getElementById("demo").innerHTML="Input OK";
+
+            }
+        }
+    </script>
+</body>
+</html>

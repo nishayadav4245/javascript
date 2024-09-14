@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center">Student Registration</h2>
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+      </div>
+      <div class="form-group">
+        <label for="middleName">Middle Name:</label>
+        <input type="text" class="form-control" id="middleName" placeholder="Enter your middle name">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select class="form-control" id="gender">
+          <option>Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" class="form-control" id="dob">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+      </div>
+      <div class="form-group">
+        <label for="password"> Confirm Password:</label>
+        <input type="password" class="form-control" id="confirm_password" placeholder="Enter your password">
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea class="form-control" id="address" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-secondary">Reset</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      
+      var firstName = document.getElementById('firstName').value;
+      var middleName = document.getElementById('middleName').value;
+      var lastName = document.getElementById('lastName').value;
+      var gender = document.getElementById('gender').value;
+      var dob = document.getElementById('dob').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var confirm_password = document.getElementById('confirm_password').value;
+      var address = document.getElementById('address').value;
+      const today = new Date();
+      const date_of_birth = new Date(dob);
+      
+      if (!firstName || !lastName || !email || !password || !gender) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      if (password.length < 6) {
+        alert('Password must be at least 6 characters long.');
+        return;
+      }
+      if(password != confirm_password){
+        alert("Password error!");
+        return;
+      }
+      if(date_of_birth > today){
+        alert("Date should not be in future");
+        return;
+      }
+      if (!emailPattern.test(email)) {
+        alert("Email must be in the format 'example@domain.tld' with at least two characters after the dot.");
+        return;
+    }
+    const dotCount = (email.match(/\./g) || []).length;
+  if (dotCount <1) {
+      alert("Email must contain atleast one dot.");
+      return;
+  }
+  const specialCharacterPattern = /[!#@$%&'*+/=?^_`{|}~-]/;
+  if (!specialCharacterPattern.test(email)) {
+      alert("Email must contain at least one special character.");
+      return;
+  }
+
+      alert('Form submitted successfully!');
+      document.getElementById('registrationForm').reset();
+    });
+  </script>
+</body>
+</html>
